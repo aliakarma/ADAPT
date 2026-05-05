@@ -38,15 +38,15 @@
     "n_total": 1000,
     "per_class_accuracy": {
       "protein_plate": 1.0,
-      "rice_dish": 1.0,
-      "fruit_bowl": 1.0,
       "sandwich": 1.0,
-      "snack_item": 1.0,
-      "legume_dish": 1.0,
       "soup": 1.0,
+      "snack_item": 1.0,
+      "rice_dish": 1.0,
+      "legume_dish": 1.0,
       "dairy_product": 1.0,
+      "salad": 1.0,
       "pasta": 1.0,
-      "salad": 1.0
+      "fruit_bowl": 1.0
     }
   },
   "nutrient_mae": {
