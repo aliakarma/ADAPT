@@ -1,5 +1,5 @@
 """
-AgHealth+ — CNN Food Classifier Training
+ADAPT — CNN Food Classifier Training
 ==========================================
 Trains the MobileNetV2 food classifier on synthetic data.
 Replace SyntheticFoodDataset with a real dataset (e.g., Food-101) for production.
