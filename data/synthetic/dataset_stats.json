@@ -1,0 +1,24 @@
+{
+  "n_users": 500,
+  "n_weeks": 8,
+  "n_records": 28000,
+  "adherence_mean": 0.676,
+  "adherence_std": 0.142,
+  "anomaly_rate": 0.0,
+  "clinical_profiles": {
+    "diabetes": 206,
+    "hypertension": 170,
+    "mixed_cardiometabolic": 124
+  },
+  "neurodivergent": {
+    "ASD": 63,
+    "ADHD": 68,
+    "none": 369
+  },
+  "disability": {
+    "physical": 103,
+    "sensory": 78,
+    "cognitive": 71,
+    "none": 248
+  }
+}
