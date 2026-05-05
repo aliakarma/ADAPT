@@ -51,7 +51,7 @@ User Input (voice / text / image)
 ┌──────┐ ┌────┐ ┌──────────┐ ┌──────────┐
 │Meal  │ │Rem-│ │Food      │ │Monitor-  │
 │Planner│ │inder│ │Guidance  │ │ing Agent │
-│(Q-RL)│ │(UCB1│ │(CNN+NLP) │ │(GRU)     │
+│(Q-RL)│ │(UCB1)│ │(CNN+NLP) │ │(GRU)     │
 └──┬───┘ └──┬─┘ └────┬─────┘ └────┬─────┘
    └────────┴─────────┴────────────┘
                      │ PRA outputs
@@ -298,8 +298,8 @@ Results are saved to `results/tables/evaluation_results.json`.
 ## Citation
 
 ```bibtex
-@article{aghealth2025,
-  title={Agentic AI for Inclusive Nutrition and Healthcare},
-  year={2025}
+@article{aghealth2026,
+  title={ADAPT: AnAgentic AI Framework for People with Disabilities and Neurodivergence},
+  year={2026}
 }
 ```
