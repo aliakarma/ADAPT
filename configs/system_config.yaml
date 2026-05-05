@@ -1,10 +1,10 @@
 # ============================================================
-# AgHealth+ System Configuration
+# ADAPT System Configuration
 # Agentic AI Nutrition & Healthcare Monitor
 # ============================================================
 
 system:
-  name: "AgHealth+"
+  name: "ADAPT"
   version: "1.0.0"
   description: "Agentic AI system for nutrition and healthcare monitoring for neurodivergent and disabled users"
   random_seed: 42
