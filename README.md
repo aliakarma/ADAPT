@@ -1,7 +1,8 @@
-# AgHealth+ — Agentic AI Nutrition & Healthcare Monitor
+# ADAPT — Agentic AI Nutrition & Healthcare Monitor
 
-> **Production-ready implementation** of the paper:  
-> *"Agentic AI for Inclusive Nutrition and Healthcare: A Multi-Agent Framework for Neurodivergent and Disabled Users"*
+
+**Production-ready implementation** of the paper:  
+*"Agentic AI for Inclusive Nutrition and Healthcare: A Multi-Agent Framework for Neurodivergent and Disabled Users"*
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -11,7 +12,7 @@
 
 ## Overview
 
-AgHealth+ is a layered, multi-agent AI system designed to help people with disabilities and neurodivergent conditions manage their nutrition and health independently. It implements the full **Perception–Reasoning–Action (PRA)** loop across four specialized agents, coordinated by a central blackboard and LLM decision node.
+ADAPT is a layered, multi-agent AI system designed to help people with disabilities and neurodivergent conditions manage their nutrition and health independently. It implements the full **Perception–Reasoning–Action (PRA)** loop across four specialized agents, coordinated by a central blackboard and LLM decision node.
 
 ### Key Results (Simulated Pilot — 500 users × 8 weeks)
 
@@ -93,7 +94,7 @@ User Input (voice / text / image)
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/aghealth-plus.git
+git clone https://github.com/aliakarma/ADAPT.git
 cd aghealth-plus
 
 # 2. Create virtual environment
@@ -137,10 +138,7 @@ All configs are in `configs/`:
 ### Run the full pilot simulation
 
 ```bash
-python experiments/run_pilot_simulation.py \
-    --n_users 500 \
-    --n_weeks 8 \
-    --seed 42
+python experiments/run_pilot_simulation.py --n_users 500 --n_weeks 8 --seed 42
 ```
 
 ### Generate all paper figures
@@ -196,7 +194,7 @@ pytest tests/ -v
 ## Project Structure
 
 ```
-aghealth_plus/
+ADAPT/
 ├── src/
 │   ├── agents/
 │   │   ├── base_agent.py          # Abstract PRA base class
