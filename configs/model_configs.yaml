@@ -1,0 +1,63 @@
+# ============================================================
+# AgHealth+ Model Configurations
+# ============================================================
+
+cnn_food_classifier:
+  architecture: "mobilenet_v2"
+  input_size: [224, 224]
+  num_classes: 10
+  pretrained: true
+  fine_tune_layers: 3
+  dropout: 0.3
+  batch_size: 32
+  learning_rate: 0.0003
+  epochs: 20
+  optimizer: "adam"
+  scheduler: "cosine_annealing"
+  weight_decay: 1.0e-4
+  food_classes:
+    - "salad"
+    - "pasta"
+    - "rice_dish"
+    - "soup"
+    - "sandwich"
+    - "fruit_bowl"
+    - "protein_plate"
+    - "legume_dish"
+    - "dairy_product"
+    - "snack_item"
+
+gru_anomaly:
+  input_size: 5          # [heart_rate, spo2, steps, glucose, intake_score]
+  hidden_size: 64
+  num_layers: 2
+  dropout: 0.2
+  output_size: 1         # anomaly probability
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 30
+  threshold: 0.65
+  optimizer: "adam"
+  loss: "bce_with_logits"
+
+nutrient_regression:
+  # Per-nutrient regression heads on top of CNN features
+  outputs: ["calories", "protein_g", "fat_g", "sugar_g"]
+  mae_targets:
+    calories: 14.0       # kcal — from paper Fig 4
+    protein_g: 1.2
+    fat_g: 1.3
+    sugar_g: 1.1
+  hidden_dims: [256, 128]
+  dropout: 0.3
+  learning_rate: 0.0005
+
+q_learning:
+  state_dims: 12         # encoded user state vector
+  action_dims: 20        # number of meal options in action space
+  table_init: "zeros"
+  alpha: 0.01
+  gamma: 0.95
+  epsilon_start: 0.3
+  epsilon_end: 0.05
+  epsilon_decay: 0.995

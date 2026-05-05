@@ -1,0 +1,83 @@
+# ============================================================
+# AgHealth+ System Configuration
+# Agentic AI Nutrition & Healthcare Monitor
+# ============================================================
+
+system:
+  name: "AgHealth+"
+  version: "1.0.0"
+  description: "Agentic AI system for nutrition and healthcare monitoring for neurodivergent and disabled users"
+  random_seed: 42
+  log_level: "INFO"
+  log_dir: "results/logs"
+
+# ---- Blackboard / Reasoning Core ----
+reasoning:
+  priority_weights:
+    medical_safety: 1.0       # Highest — never overridden
+    user_preference: 0.6
+    behavioral_nudge: 0.3
+  conflict_resolution: "priority_weighted"
+  max_blackboard_entries: 500
+  blackboard_ttl_seconds: 3600
+
+# ---- MCP Router ----
+mcp:
+  timeout_seconds: 10
+  retry_attempts: 3
+  trace_metadata: true
+  external_connectors:
+    grocery_api:
+      enabled: false
+      endpoint: "https://api.example.com/grocery"
+    barcode_api:
+      enabled: false
+      endpoint: "https://api.example.com/barcode"
+    wearable_sdk:
+      enabled: false
+      endpoint: "https://api.example.com/wearable"
+    calendar_api:
+      enabled: false
+      endpoint: "https://api.example.com/calendar"
+
+# ---- LLM Decision Node ----
+llm:
+  model: "gpt-4o-mini"          # swap for local model as needed
+  use_mock: true                 # true = rule-based mock for offline testing
+  temperature: 0.2
+  max_tokens: 512
+  system_prompt: |
+    You are a clinical AI assistant specialized in nutrition and health monitoring
+    for users with disabilities and neurodivergent conditions. Always prioritize
+    medical safety constraints over preferences. Be concise, empathetic, and clear.
+
+# ---- Policy & Consent ----
+policy:
+  data_retention_days: 90
+  require_explicit_consent: true
+  audit_all_writes: true
+  least_privilege: true
+  allowed_data_scopes:
+    - "nutrition"
+    - "reminders"
+    - "health_vitals"
+    - "caregiver_summary"
+
+# ---- Simulation / Pilot ----
+simulation:
+  n_users: 500
+  n_weeks: 8
+  clinical_profiles: ["diabetes", "hypertension", "mixed_cardiometabolic"]
+  neurodivergent_types: ["ASD", "ADHD", "none"]
+  disability_types: ["physical", "sensory", "cognitive", "none"]
+
+# ---- Database ----
+database:
+  structured_db: "sqlite:///data/aghealth.db"
+  log_db: "data/logs.json"
+
+# ---- API ----
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false

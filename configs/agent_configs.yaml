@@ -1,0 +1,60 @@
+# ============================================================
+# AgHealth+ Agent Configurations
+# ============================================================
+
+meal_planner:
+  algorithm: "q_learning"
+  epsilon: 0.15           # exploration rate
+  epsilon_decay: 0.995
+  alpha: 0.01             # learning rate
+  gamma: 0.95             # discount factor
+  episodes_per_user: 56   # 8 weeks × 7 days
+  reward_weights:
+    nutrition_score: 0.5
+    user_acceptance: 0.3
+    clinical_compliance: 0.2
+  max_calories_default: 2000
+  gradual_change: true    # prefer incremental dietary changes
+  planning_horizon: "week"  # "day" or "week"
+
+reminder:
+  algorithm: "contextual_bandit"
+  modalities: ["vibration", "text_banner", "icon", "sound"]
+  arms: 4
+  exploration_param: 0.1  # UCB1 exploration
+  min_gap_minutes: 30     # minimum time between reminders
+  max_daily_reminders: 5
+  learn_from_snooze: true
+  low_stimulation: true   # autism-friendly low-friction delivery
+
+food_guidance:
+  cnn_model: "mobilenet_v2"      # lightweight for mobile
+  cnn_pretrained: true
+  num_food_classes: 10
+  confidence_threshold: 0.75
+  fallback_on_low_confidence: true  # request clarifying photo
+  nlp_model: "bert-base-uncased"
+  portion_estimation: true
+  approve_limit_deny_thresholds:
+    approve: 1.0   # within 100% of plan
+    limit: 1.25    # up to 125%
+    deny: 1.5      # over 150%
+
+monitoring:
+  model: "gru"
+  hidden_size: 64
+  num_layers: 2
+  sequence_length: 24   # 24-hour window
+  anomaly_threshold: 0.65
+  alert_cooldown_minutes: 60
+  vitals:
+    heart_rate:
+      normal_min: 50
+      normal_max: 100
+    spo2:
+      normal_min: 94
+      normal_max: 100
+    steps_daily_target: 6000
+    glucose_high_threshold: 180   # mg/dL
+    glucose_low_threshold: 70
+  caregiver_escalation_risk_level: 0.8   # 0–1 scale

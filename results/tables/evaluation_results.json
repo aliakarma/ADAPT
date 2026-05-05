@@ -1,0 +1,58 @@
+{
+  "nutritional_adequacy": {
+    "nutritional_adequacy_pct": 0.0,
+    "mean_nutrition_score": 0.3844,
+    "std_nutrition_score": 0.0374,
+    "n_records": 2000,
+    "threshold_used": 0.8
+  },
+  "adherence": {
+    "adherence_rate_pct": 60.51,
+    "n_complied": 4233,
+    "n_snoozed": 747,
+    "n_ignored": 2015,
+    "n_reminders": 6995
+  },
+  "user_satisfaction": {
+    "satisfaction_mean": 4.359,
+    "satisfaction_std": 0.397,
+    "satisfaction_min": 2.97,
+    "satisfaction_max": 5.0,
+    "n_responses": 2000
+  },
+  "caregiver_burden": {
+    "baseline_intervention_rate": 0.15,
+    "actual_intervention_rate": 0.024,
+    "caregiver_burden_reduction_pct": 84.0,
+    "n_interventions": 48,
+    "n_days": 2000
+  },
+  "explainability": {
+    "explainability_rate_pct": 100.0,
+    "n_explained": 200,
+    "n_decisions": 200
+  },
+  "food_recognition": {
+    "accuracy": 100.0,
+    "n_correct": 1000,
+    "n_total": 1000,
+    "per_class_accuracy": {
+      "protein_plate": 1.0,
+      "rice_dish": 1.0,
+      "fruit_bowl": 1.0,
+      "sandwich": 1.0,
+      "snack_item": 1.0,
+      "legume_dish": 1.0,
+      "soup": 1.0,
+      "dairy_product": 1.0,
+      "pasta": 1.0,
+      "salad": 1.0
+    }
+  },
+  "nutrient_mae": {
+    "mae_calories": 10.774,
+    "mae_protein_g": 0.972,
+    "mae_fat_g": 1.016,
+    "mae_sugar_g": 0.896
+  }
+}
