@@ -299,7 +299,7 @@ Results are saved to `results/tables/evaluation_results.json`.
 
 ```bibtex
 @article{aghealth2026,
-  title={ADAPT: AnAgentic AI Framework for People with Disabilities and Neurodivergence},
+  title={ADAPT: An Agentic AI Framework for People with Disabilities and Neurodivergence},
   year={2026}
 }
 ```
