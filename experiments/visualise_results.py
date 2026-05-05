@@ -1,5 +1,5 @@
 """
-AgHealth+ — Results Visualisation
+ADAPT — Results Visualisation
 ====================================
 Reproduces all paper figures from evaluation results:
 
@@ -83,7 +83,7 @@ def fig_nutrient_mae(output_path: str):
 
 def fig_adherence_comparison(output_path: str):
     """Figure 5: Adherence Rate — static vs adaptive."""
-    categories = ["Static\nReminders", "Adaptive\n(AgHealth+)"]
+    categories = ["Static\nReminders", "Adaptive\n(ADAPT)"]
     values = [54, 81]  # from paper
 
     fig, ax = plt.subplots(figsize=(6, 5))
@@ -128,7 +128,7 @@ def fig_pilot_metrics_summary(output_path: str):
                  fontsize=11, padding=3)
     ax.set_ylim(0, 110)
     ax.set_ylabel("Score / Percentage", fontsize=12)
-    ax.set_title("AgHealth+ Pilot Study — Key Results", fontsize=14, fontweight="bold")
+    ax.set_title("ADAPT Pilot Study — Key Results", fontsize=14, fontweight="bold")
     plt.tight_layout()
     fig.savefig(output_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
@@ -146,7 +146,7 @@ def fig_adherence_over_weeks(output_path: str):
     ax.plot(weeks, static_adherence, "o--", color=COLORS["gray"],
             label="Static Reminders (Baseline)", linewidth=2, markersize=7)
     ax.plot(weeks, adaptive_adherence, "s-", color=COLORS["green"],
-            label="AgHealth+ Adaptive", linewidth=2, markersize=7)
+            label="ADAPT Adaptive", linewidth=2, markersize=7)
     ax.fill_between(weeks, static_adherence, adaptive_adherence,
                     alpha=0.15, color=COLORS["green"])
     ax.set_xlabel("Week", fontsize=12)
