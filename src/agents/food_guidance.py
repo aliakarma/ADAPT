@@ -1,5 +1,5 @@
 """
-AgHealth+ — Food Guidance Agent
+ADAPT — Food Guidance Agent
 ==================================
 PRA agent for real-time food recognition and nutritional guidance.
 
