@@ -1,5 +1,5 @@
 """
-AgHealth+ — GRU Anomaly Detector Training
+ADAPT — GRU Anomaly Detector Training
 ===========================================
 Trains the GRU anomaly detection model on synthetic vital sign sequences.
 
