@@ -1,5 +1,5 @@
 """
-AgHealth+ — FastAPI REST API
+ADAPT — FastAPI REST API
 ==============================
 Exposes the agentic system via HTTP endpoints for mobile/web integration.
 
@@ -30,7 +30,7 @@ from src.utils import load_config
 # ──────────────────────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="AgHealth+ API",
+    title="ADAPT API",
     description="Agentic AI Nutrition & Healthcare Monitor for Neurodivergent and Disabled Users",
     version="1.0.0",
     docs_url="/docs",
@@ -51,7 +51,7 @@ _orchestrator: Optional[AgHealthOrchestrator] = None
 @app.on_event("startup")
 async def startup():
     global _orchestrator
-    logger.info("API | startup | initialising AgHealth+ orchestrator...")
+    logger.info("API | startup | initialising ADAPT orchestrator...")
     _orchestrator = AgHealthOrchestrator()
     logger.info("API | ready")
 
@@ -112,7 +112,7 @@ class ConsentRequest(BaseModel):
 
 @app.get("/api/v1/health")
 async def health_check():
-    return {"status": "ok", "service": "AgHealth+", "version": "1.0.0"}
+    return {"status": "ok", "service": "ADAPT", "version": "1.0.0"}
 
 
 @app.post("/api/v1/consent")
