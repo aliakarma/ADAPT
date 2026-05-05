@@ -1,5 +1,5 @@
 """
-AgHealth+ — Base Agent (PRA Loop)
+ADAPT — Base Agent (PRA Loop)
 ====================================
 All four specialized agents inherit from this abstract base class.
 
