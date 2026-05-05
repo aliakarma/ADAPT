@@ -16,8 +16,6 @@ env/
 *.pth
 *.ckpt
 results/logs/*.log
-results/graphs/*.png
-data/synthetic/*.json
 *.db
 *.sqlite
 .DS_Store
