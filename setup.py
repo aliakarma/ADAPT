@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="aghealth_plus",
+    name="ADAPT",
     version="1.0.0",
     description="Agentic AI Nutrition and Healthcare Monitor for Neurodivergent and Disabled Users",
     packages=find_packages(exclude=["tests*", "experiments*", "notebooks*"]),
