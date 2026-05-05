@@ -21,3 +21,4 @@ data/synthetic/*.json
 *.db
 *.sqlite
 .DS_Store
+CITATION.cff
