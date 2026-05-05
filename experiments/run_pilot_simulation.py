@@ -1,11 +1,11 @@
 """
-AgHealth+ — Pilot Simulation Experiment
+ADAPT — Pilot Simulation Experiment
 ==========================================
 Reproduces the full pilot study from Section 5 of the paper:
 
   - 500 simulated users × 8 weeks
   - Generates synthetic dataset
-  - Runs the AgHealth+ system on all records
+    - Runs the ADAPT system on all records
   - Computes all evaluation metrics
   - Saves results to results/tables/ and results/graphs/
 
@@ -33,7 +33,7 @@ from src.utils import set_global_seed, save_json, load_json
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="AgHealth+ Pilot Simulation")
+    parser = argparse.ArgumentParser(description="ADAPT Pilot Simulation")
     parser.add_argument("--n_users", type=int, default=500)
     parser.add_argument("--n_weeks", type=int, default=8)
     parser.add_argument("--seed", type=int, default=42)
@@ -49,7 +49,7 @@ async def run_system_on_records(
     daily_records: list,
     max_records: int = 200,  # subsample for speed in simulation
 ) -> list:
-    """Run the AgHealth+ pipeline on a sample of daily records."""
+    """Run the ADAPT pipeline on a sample of daily records."""
     # Build user profile map
     user_map = {u["user_id"]: u for u in users}
     responses = []
@@ -140,7 +140,7 @@ def main():
     Path(f"{args.output_dir}/logs").mkdir(exist_ok=True)
 
     print("=" * 60)
-    print(" AgHealth+ Pilot Simulation")
+    print(" ADAPT Pilot Simulation")
     print(f" Users={args.n_users}, Weeks={args.n_weeks}, Seed={args.seed}")
     print("=" * 60)
 
@@ -164,7 +164,7 @@ def main():
     daily_records = load_json(f"{data_dir}/daily_records.json")
 
     # 2. Run system pipeline
-    print("\n[2/4] Running AgHealth+ pipeline on sampled records...")
+    print("\n[2/4] Running ADAPT pipeline on sampled records...")
     orchestrator = AgHealthOrchestrator(seed=args.seed)
     responses = asyncio.run(run_system_on_records(orchestrator, users, daily_records))
     print(f"      ✓ Processed {len(responses)} records")
