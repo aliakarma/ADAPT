@@ -298,8 +298,9 @@ Results are saved to `results/tables/evaluation_results.json`.
 ## Citation
 
 ```bibtex
-@article{aghealth2026,
+@article{adapt2026,
   title={ADAPT: An Agentic AI Framework for People with Disabilities and Neurodivergence},
+  author={Ali Akarma}
   year={2026}
 }
 ```
